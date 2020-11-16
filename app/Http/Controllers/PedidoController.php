@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Pedido;
+use App\User;
 use App\Producto;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class PedidoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos=Producto::all();
-        return view('productos.index',compact('productos'));
+        $pedidos=Pedido::with('user','producto')->get();
+        // return $pedidos;
+        return view('pedidos.index',compact('pedidos'));
     }
 
     /**
@@ -25,7 +28,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.crear');
+        $usuarios=User::all();
+        $productos=Producto::all();
+        return view('pedidos.crear',compact(['usuarios','productos']));
     }
 
     /**
@@ -36,21 +41,21 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $producto=new Producto();
-        $producto->nombre=$request->nombre;
-        $producto->descripcion=$request->descripcion;
-        $producto->valor=$request->valor;
-        $producto->save();
+        $pedido=new Pedido();
+        $pedido->user_id=$request->usuario;
+        $pedido->producto_id=$request->producto;
+        $pedido->cantidad=$request->cantidad;
+        $pedido->save();
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Producto  $producto
+     * @param  \App\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show(Pedido $pedido)
     {
         //
     }
@@ -58,10 +63,10 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Producto  $producto
+     * @param  \App\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit(Pedido $pedido)
     {
         //
     }
@@ -70,10 +75,10 @@ class ProductoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Producto  $producto
+     * @param  \App\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, Pedido $pedido)
     {
         //
     }
@@ -81,10 +86,10 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Producto  $producto
+     * @param  \App\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy(Pedido $pedido)
     {
         //
     }

@@ -4,14 +4,18 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
             <th>Valor</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($facturas as $factura)
+        @foreach ($productos as $producto)
         <tr>
-            <td>{{$factura->id}}</td>
-            <td>{{$factura->valor}}</td>
+            <td>{{$producto->id}}</td>
+            <td>{{$producto->nombre}}</td>
+            <td>{{$producto->descripcion}}</td>
+            <td>{{$producto->valor}}</td>
         </tr>
         @endforeach
     </tbody>
