@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<p class="h1">Productos</p>
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
@@ -20,4 +21,9 @@
         @endforeach
     </tbody>
 </table>
+<div class="col-12">
+    <div class="col-4">
+        <a href="/producto/create" class="btn btn-primary btn-sm">Crear un producto</a>
+    </div>
+</div>
 @endsection
