@@ -19,6 +19,9 @@ class RolesPermisosSeeder extends Seeder
         // $permission->assignRole($role);
         // $user=App\User::find(1);
         // $user->assignRole('administrador');
+        // $permission = Permission::create(['name' => 'crear-mesa']);
+        // Role::find(1)->givePermissionTo('crear-producto');
+        // $permission = Permission::create(['name' => 'crear-producto']);
 
     }
 }

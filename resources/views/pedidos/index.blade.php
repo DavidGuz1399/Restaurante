@@ -21,9 +21,11 @@
         @endforeach
     </tbody>
 </table>
+@can('crear-pedido')
 <div class="col-12">
     <div class="col-4">
         <a href="/pedido/create" class="btn btn-primary btn-sm">Crear un pedido</a>
     </div>
 </div>
+@endcan
 @endsection

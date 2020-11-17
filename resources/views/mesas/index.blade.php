@@ -1,26 +1,26 @@
 @extends('layouts.app')
 @section('content')
-<p class="h1">Facturas</p>
+<p class="h1">Mesas</p>
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Valor</th>
+            <th>Numero</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($facturas as $factura)
+        @foreach ($mesas as $mesa)
         <tr>
-            <td>{{$factura->id}}</td>
-            <td>{{$factura->valor}}</td>
+            <td>{{$mesa->id}}</td>
+            <td>{{$mesa->numero}}</td>
         </tr>
         @endforeach
     </tbody>
 </table>
-@can('crear-factura')
+@can('crear-mesa')
 <div class="col-12">
     <div class="col-4">
-        <a href="/crear-factura" class="btn btn-primary btn-sm">Crear una factura</a>
+        <a href="/mesa/create" class="btn btn-primary btn-sm">Crear una mesa</a>
     </div>
 </div>
 @endcan

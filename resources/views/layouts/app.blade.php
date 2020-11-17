@@ -42,6 +42,9 @@
                           <li class="nav-item">
                             <a class="nav-link" href="/pedido">Pedidos</a>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/mesa">Mesas</a>
+                          </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
