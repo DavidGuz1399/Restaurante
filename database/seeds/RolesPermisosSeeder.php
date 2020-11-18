@@ -13,7 +13,7 @@ class RolesPermisosSeeder extends Seeder
      */
     public function run()
     {
-        // $role = Role::create(['name' => 'administrador']);
+        // $role = Role::create(['name' => 'cliente']);
         // $permission = Permission::create(['name' => 'crear-factura']);
         // $role->givePermissionTo($permission);
         // $permission->assignRole($role);

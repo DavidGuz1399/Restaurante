@@ -24,3 +24,4 @@ Route::post('/factura','FacturaController@store');
 Route::resource('/producto', 'ProductoController');
 Route::resource('/pedido', 'PedidoController');
 Route::resource('/mesa', 'MesaController');
+Route::get('/usuarios','UserController@index');
